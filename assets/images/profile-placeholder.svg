@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 480" role="img" aria-label="Placeholder foto profil Yosua">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#15334b"/><stop offset=".55" stop-color="#24204a"/><stop offset="1" stop-color="#101a31"/></linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6cecff"/><stop offset="1" stop-color="#b18cff"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#6cecff" stop-opacity=".24"/><stop offset="1" stop-color="#6cecff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="400" height="480" fill="url(#bg)"/>
+  <circle cx="205" cy="190" r="190" fill="url(#glow)"/>
+  <g fill="none" stroke="url(#line)" opacity=".28"><path d="M0 80H400M0 160H400M0 240H400M0 320H400M0 400H400M60 0V480M140 0V480M220 0V480M300 0V480M380 0V480" stroke-width="1"/><circle cx="200" cy="190" r="123" stroke-width="2" stroke-dasharray="5 10"/><circle cx="200" cy="190" r="145" stroke-width="1"/></g>
+  <circle cx="200" cy="170" r="66" fill="#7b9db8" opacity=".24" stroke="#9befff" stroke-opacity=".7" stroke-width="2"/>
+  <path d="M83 430c8-91 57-139 117-139s109 48 117 139" fill="#7b9db8" opacity=".2" stroke="#9befff" stroke-opacity=".7" stroke-width="2"/>
+  <text x="200" y="205" text-anchor="middle" font-family="Arial,sans-serif" font-size="54" font-weight="700" fill="#e8faff">YW</text>
+  <text x="200" y="455" text-anchor="middle" font-family="monospace" font-size="12" letter-spacing="4" fill="#9ccddd">YOUR PHOTO HERE</text>
+</svg>
