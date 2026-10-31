@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b14">
-  <meta name="description" content="Portofolio Yosua V. Watulangkow — mahasiswa Teknik Informatika yang tertarik pada jaringan komputer dan teknologi.">
+  <meta name="theme-color" content="#080b14" id="themeColor">
+  <meta name="description" content="Portofolio Yosua V. Watulangkow — mahasiswa Teknik Informatika yang tertarik pada jaringan komputer dan teknologi." id="pageDescription">
   <title>Yosua V. Watulangkow — Tech Portfolio</title>
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/style.css">
@@ -19,7 +19,7 @@
   <div class="grid-overlay" aria-hidden="true"></div>
 
   <header class="site-header">
-    <a class="brand" href="#home" aria-label="Yosua, kembali ke Home">
+    <a class="brand" href="#home" aria-label="Yosua, kembali ke Home" aria-controls="mainNav" aria-expanded="false">
       <span class="brand-mark">Y<span>.</span></span>
       <span class="brand-name">yosua<span class="brand-dot">/</span>dev</span>
     </a>
@@ -35,6 +35,17 @@
       <a class="nav-link" href="#projects">Projects</a>
       <a class="nav-link" href="#contact">Contact</a>
     </nav>
+    <div class="header-controls">
+      <label class="theme-control">
+        <span class="sr-only">Tema tampilan</span>
+        <select id="themeSelect" aria-label="Tema tampilan">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </label>
+      <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch language to English">ID</button>
+    </div>
     <a class="header-cta" href="#contact">Let's connect <span aria-hidden="true">↗</span></a>
   </header>
 
@@ -135,10 +146,18 @@
       <div class="projects-grid">
         <article class="project-card project-feature glass liquid-card reveal">
           <div class="project-visual network-visual"><div class="network-grid"></div><div class="network-node node-router"><span>R</span><small>ROUTER</small></div><div class="network-node node-switch"><span>SW</span><small>SWITCH</small></div><div class="network-node node-server"><span>▤</span><small>SERVER</small></div><div class="network-node node-pc1"><span>PC</span></div><div class="network-node node-pc2"><span>PC</span></div><div class="network-node node-pc3"><span>PC</span></div><svg class="network-lines" viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true"><path d="M300 58 L300 132 M300 132 L130 220 M300 132 L300 220 M300 132 L470 220 M130 220 L130 250 M300 220 L300 250 M470 220 L470 250"/><path class="line-glow" d="M300 58 L300 132 L130 220 M300 132 L300 220 M300 132 L470 220"/></svg><span class="visual-tag">PACKET TRACER / LAB 01</span></div>
+          <figure class="project-result-slot" data-image-slot>
+            <img src="assets/images/topologi-jaringan.png" alt="Hasil simulasi topologi jaringan">
+            <figcaption><span>Hasil kerja belum ditambahkan</span><small>Letakkan file gambar di:</small><code>assets/images/topologi-jaringan.png</code></figcaption>
+          </figure>
           <div class="project-content"><div class="project-meta"><span>NETWORKING</span><span>ACADEMIC PRACTICE</span></div><h3>Simulasi Topologi Jaringan</h3><p>Latihan merancang jaringan menggunakan Cisco Packet Tracer. Mencakup perangkat router, switch, PC, dan server, pengaturan alamat IP, DHCP/DNS, serta pengujian konektivitas.</p><div class="project-tags"><span>Cisco Packet Tracer</span><span>IP Addressing</span><span>DHCP / DNS</span></div><div class="project-bottom"><span>LEARNING PROJECT · 01</span><span class="project-arrow">↗</span></div></div>
         </article>
         <article class="project-card glass liquid-card reveal">
           <div class="project-visual mikrotik-visual"><div class="radar-rings"><i></i><i></i><i></i><span>◎</span></div><div class="router-chip">MikroTik<br><b>WinBox</b></div><div class="signal signal-a"></div><div class="signal signal-b"></div><div class="signal signal-c"></div><span class="visual-tag">NETWORK CONFIG / LAB 02</span></div>
+          <figure class="project-result-slot" data-image-slot>
+            <img src="assets/images/eksplorasi-mikrotik.jpg" alt="Hasil eksplorasi konfigurasi MikroTik">
+            <figcaption><span>Hasil kerja belum ditambahkan</span></figcaption>
+          </figure>
           <div class="project-content"><div class="project-meta"><span>NETWORKING</span><span>PRACTICE</span></div><h3>Eksplorasi MikroTik</h3><p>Praktik mengenal konfigurasi jaringan melalui WinBox, termasuk pengaturan jaringan lokal dan dasar layanan hotspot.</p><div class="project-tags"><span>MikroTik</span><span>WinBox</span><span>Hotspot</span></div><div class="project-bottom"><span>LEARNING PROJECT · 02</span><span class="project-arrow">↗</span></div></div>
         </article>
       </div>
@@ -155,5 +174,13 @@
 
   <footer class="site-footer section-shell"><a class="brand" href="#home"><span class="brand-mark">Y<span>.</span></span><span class="brand-name">yosua<span class="brand-dot">/</span>dev</span></a><p>Built with curiosity <span>✳</span> and a little bit of code.</p><a href="#home" class="back-top">BACK TO TOP ↑</a></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog class="image-preview-dialog" id="imagePreviewDialog" aria-labelledby="imagePreviewTitle">
+    <div class="image-preview-content">
+      <button class="image-preview-close" id="imagePreviewClose" type="button" aria-label="Tutup preview">×</button>
+      <h2 class="sr-only" id="imagePreviewTitle">Preview hasil kerja</h2>
+      <img id="imagePreview" alt="">
+      <p id="imagePreviewCaption"></p>
+    </div>
+  </dialog>
 </body>
 </html>
